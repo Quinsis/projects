@@ -1,0 +1,152 @@
+.creationPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.create_player {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 45px;
+}
+
+.create_player input, .create_player .select {
+    font-family: 'Champions Regular' !important;
+    padding: 13px 10px;
+    width: 400px;
+    border: 2px solid #616370;
+    border-radius: 7px;
+    background: #141824;
+    color: white;
+}
+
+.create_player input:focus {
+    outline-width: 2px;
+    outline-color: white;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 70%);
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+input::-webkit-input-placeholder {
+    color: transparent;
+}
+input::-moz-placeholder {
+    color: transparent;
+}
+input:-moz-placeholder {
+    color: transparent;
+}
+input:-ms-input-placeholder {
+    color: transparent;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: #616370;
+}
+
+input:focus::-moz-placeholder {
+    color: #616370;
+}
+
+input:focus:-moz-placeholder {
+    color: #616370;
+}
+
+input:focus:-ms-input-placeholder {
+    color: #616370;
+}
+
+.input label {
+    font-family: 'Champions Regular' !important;
+    letter-spacing: 1px;
+}
+
+.button {
+    font-family: 'Champions Regular' !important;
+    background: #235FE3 !important;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: none !important;
+}
+.button:hover {
+    background: #4075ea !important;
+}
+
+
+.login {
+    text-decoration: none;
+    color: #6888D5;
+}
+
+.login:hover {
+    text-decoration: underline;
+}
+
+.players {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.player {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.player_preview {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.player_position {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+}
+
+.player_position a:hover {
+    text-decoration: underline;
+}
+
+.player img {
+    height: 90px !important;
+    width: auto;
+    border-radius: 15px;
+    background: #f5f5f5;
+}
+
+.player h2, h4 {
+    color: #1D2033;
+}

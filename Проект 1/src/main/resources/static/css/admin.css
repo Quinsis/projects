@@ -1,0 +1,108 @@
+.administrationPanel {
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.users {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media screen and (max-width: 996px) {
+    .users {
+        grid-template-columns: 1fr;
+    }
+}
+
+.user {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 10px;
+    background: white;
+    border-radius: 4px;
+}
+
+.roles {
+    align-items: flex-end;
+}
+
+.fa-xmark {
+    font-size: 16px;
+    color: #cb2a2a;
+}
+
+.fa-check {
+    font-size: 16px;
+    color: #3dbb3d;
+}
+
+.user h3 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    align-self: flex-end;
+    justify-content: flex-end;
+}
+
+.button {
+    padding: 10px 30px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    align-self: flex-end;
+    text-align: center;
+}
+
+.set {
+    background: #cb2a2a;
+}
+
+.remove {
+    background: #3dbb3d;
+}
+
+.user-header, .user-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    color: #282c41 !important;
+}
+
+.status-container {
+    align-self: flex-end;
+}
+
+.status {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-self: flex-start;
+}
+
+.info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+}

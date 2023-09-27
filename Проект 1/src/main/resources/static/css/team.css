@@ -1,0 +1,131 @@
+h1 {
+    margin: 0px;
+}
+
+.team_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.team_about {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.team_logo {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 7px;
+}
+
+.matches {
+    width: 100%;
+
+}
+
+.team_info img {
+    height: 100px !important;
+    width: auto;
+}
+
+.team_info h1 {
+    color: white;
+    font-size: 30px;
+}
+
+.match_history {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.match_history h2 {
+    color: white;
+}
+
+.match_history ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.matchWon, .matchDraw, .matchLoss {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+.matchWon {
+    background: #3dbb3d;
+}
+
+.matchDraw {
+    background: #858585;
+}
+
+.matchLoss {
+    background: #bb3d3d;
+}
+
+.players_block {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 31.5px 20px;
+    border-radius: 7px;
+}
+
+.players_block_header h1, .players_block_header a {
+    color: #1D2033;
+}
+
+.players_block_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 100px;
+    row-gap: 40px;
+    flex-wrap: wrap-reverse;
+}
+
+.team {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 50px 0px;
+    align-items: flex-start;
+}
+
+.matches {
+    margin-top: 0px;
+}
+
+.team_logo h1, .team_logo h4 {
+    color: #1D2033;
+}
+
+@media screen and (max-width: 996px) {
+    .team {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .owner h3, .guest h3 {
+        display: none;
+    }
+}
+

@@ -1,0 +1,483 @@
+.tournaments_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 50px;
+    margin-top: 80px;
+}
+
+.tournaments_block h1 {
+    color: white;
+}
+
+.tournaments {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.tournaments li {
+    position: relative;
+}
+
+.tournaments li h2 {
+    position: absolute;
+    top: -5px;
+    left: 200px;
+    color: white;
+    transition: 0.3s;
+    animation: transition 4s infinite;
+}
+
+.tournament {
+    position: relative;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    background: white;
+    gap: 40px;
+    transition: 0.2s;
+    clip-path: polygon(0 0, 155px 0, 180px 20%, 100% 20%, 100% 100%, 0 100%);
+    border-radius: 7px;
+}
+
+.tournament:hover .tournament-img {
+    scale: 1.1;
+}
+
+.tournament h2 {
+    color: #1D2033;
+}
+
+.tournament .tournament-img {
+    height: 120px !important;
+    width: auto;
+    transition: 0.2s;
+}
+
+.tournament_info {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-self: flex-end;
+}
+
+.tournament_info .date {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tournament_info .date span {
+    font-size: 14px;
+    color: grey;
+}
+
+.tournament_info .date p {
+    font-size: 16px;
+    color: #1D2033;
+}
+
+@media screen and (max-width: 996px) {
+    .tournaments {
+        grid-template-columns: 1fr;
+    }
+    .playOffStageMatches {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.playoff {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.playOffStage h2 {
+    color: white !important;
+}
+
+.playOffStageMatches {
+    margin: 30px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.unPlayedPlayOffMatch {
+    align-self: start;
+}
+
+.unPlayedPlayOffMatch a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 47px 0px;
+    background: white;
+    border-radius: 7px;
+    transition: 0.2s;
+    border: 1px solid white;
+}
+
+.unPlayedPlayOffMatch a i {
+    font-size: 80px;
+    color: #1D2033;
+    transition: 0.3s;
+}
+
+.unPlayedPlayOffMatch a:hover i {
+    color: white;
+}
+
+.unPlayedPlayOffMatch a:hover {
+    background: #1D2033;
+}
+
+.score h2 {
+    color: #1D2033 !important;
+}
+
+
+.bracket {
+    position: relative;
+    max-width: 100%;
+    height: max-content !important;
+    overflow-x: scroll;
+    margin: 40px 0px 10px 0px;
+    background: #f5f5f5;
+    border-radius: 3px;
+}
+
+.bracket_container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    max-width: max-content;
+    height: 100% !important;
+}
+
+.round {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    min-height: 1200px !important;
+    padding: 80px 40px 40px;
+}
+
+.round .round-nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    top: 20px;
+    color: #282c41;
+    padding: 0px 40px;
+}
+
+.round-nav .tours {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.tour {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    width: 36px;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    background: white;
+    color: #282c41;
+    cursor: pointer;
+}
+
+.matchUp {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px !important;
+    gap: 10px;
+    transition: 0.4s;
+}
+
+.matchUp_team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    background: white;
+    padding: 4px 10px;
+    height: 45px !important;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    transition: 0.25s;
+}
+
+.matchUp_team:hover {
+    border: 1px solid #282c41;
+}
+
+.matchUp_team .team_tag {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.matchUp_team img {
+    width: auto;
+    height: 24px !important;
+}
+
+.matchUp .match-add {
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    font-size: 50px;
+    background: white;
+    color: lightgray;
+    border-radius: 50%;
+}
+
+#odd {
+    background: #f0f0f0;
+}
+#even {
+    background: #fafafa;
+}
+
+.matchUp .edit {
+    font-size: 18px;
+    color: #8c8c8c;
+}
+
+.matchUp .edit a {
+    text-decoration: none;
+}
+
+.matchUp-options {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: space-between !important;
+    width: 45px;
+    color: #8c8c8c;
+    transition: 0.4s;
+    height: 100% !important;
+    gap: 10px;
+}
+
+.matchUp-options .edit {
+    width: 100% !important;
+    height: 45px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    background: white;
+}
+
+.matchUp-container {
+    display: flex;
+    justify-content: flex-start;
+    justify-self: flex-start;
+    align-self: flex-start;
+    gap: 10px;
+}
+
+.matchUp {
+    justify-self: flex-start;
+    align-self: flex-start;
+}
+
+.matchUp-options a {
+    transition: 0.3s;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    background: white;
+    display: none;
+}
+
+.matchUp-options:hover {
+    width: 200px !important;
+}
+
+.matchUp-options:hover a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 10px;
+    height: 45px !important;
+    width: 100%;
+    animation: opacity1 0.4s ease;
+}
+
+@keyframes opacity1 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.matchUp-options a:hover {
+    background: #282c41;
+    color: white;
+}
+
+.matchUp-options:hover i {
+    display: none;
+}
+
+.matchUp-options:hover ~ .matchUp {
+    width: 45px !important;
+}
+
+.matchUp-options:hover ~ .matchUp .matchUp_team p{
+    display: none;
+}
+
+.matchUp-options:hover ~ .matchUp .matchUp_team {
+    justify-content: center;
+    align-items: center;
+}
+
+.matchUp-tourTwo {
+    display: none;
+}
+
+.matchUp-tourOne {
+    display: none;
+}
+
+.visible {
+    display: flex;
+}
+
+.match {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+}
+
+.match-content {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    background: white !important;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transition: 0.3s;
+}
+
+.match .stats {
+    display: flex;
+}
+
+.target {
+    display: flex;
+    animation: opacity1 0.5s ease;
+}
+
+.match .stat {
+    justify-content: space-around;
+}
+
+.match .stat p, .match .stat h3 {
+    font-size: 14px;
+}
+
+.matchUp-unplayed {
+    width: 255px !important;
+}
+.tours p {
+    margin-right: 10px;
+}
+
+.show, .close {
+    cursor: pointer;
+}
+
+.tournament-add {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    background: white;
+    border-radius: 7px;
+    padding: 35px 30px;
+}
+
+.tournament-add:hover i {
+    scale: 1.1;
+}
+
+.tournament-add i {
+    font-size: 80px;
+    color: #282c41;
+    transition: 0.2s;
+}
+
+
+.tournament .winner {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    width: 160px;
+    padding: 0px 30px;
+    position: absolute;
+    right: 0;
+    gap: 10px;
+    color: #282c41;
+    background: white;
+    z-index: 2;
+}
+
+.tournament .winner img {
+    height: 60px !important;
+    width: auto;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 100%;
+        scale: 1.0;
+    }
+    50% {
+        opacity: 0%;
+        scale: 0.8;
+    }
+    100% {
+        opacity: 100%;
+        scale: 1.0;
+    }
+}
