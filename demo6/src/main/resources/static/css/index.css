@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet&family=Mulish&family=Rubik&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 100px;
+    padding: 100px 150px;
+}
+
+.navbar {
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.panel {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.panel_title {
+    width: 400px;
+    font-size: 40px;
+}
+
+.panel_tools {
+    display: flex;
+    column-gap: 20px;
+}
+
+.tool {
+    position: relative;
+    display: flex;
+    padding: 40px 30px;
+    width: 300px;
+    height: 350px;
+    background: #F7F7F8;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.tool:hover, .navbar-link:hover {
+    background: #ECECF1;
+}
+
+.tool-title {
+    font-size: 20px;
+    color: black;
+    width: 200px;
+}
+
+.tool-desc {
+    color: #5b5b5b;
+    width: 200px;
+    font-size: 14px;
+}
+
+.navbar-link {
+    display: flex;
+    padding: 20px 30px;
+    background: #F7F7F8;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    color: black;
+}
+
+.green {
+    color: #10A37F;
+}
+
+.fa-arrow-right {
+    font-size: 16px;
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    transition: 0.3s;
+    color: #2b2b2b;
+}
+
+.tool:hover .fa-arrow-right {
+    right: 30px;
+}

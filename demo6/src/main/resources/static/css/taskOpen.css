@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet&family=Mulish&family=Rubik&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+.main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+    justify-content: center;
+}
+
+.input-group {
+    display: flex;
+    gap: 20px;
+}
+
+input {
+    font-family: inherit;
+    outline: none;
+    border: none;
+    transition: 0.3s;
+    font-size: 24px;
+}
+
+input[type=text] {
+    display: flex;
+    padding: 20px 30px;
+    width: 800px;
+    background: #F7F7F8;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+input[type=text]::placeholder {
+    text-transform: none;
+}
+
+.back {
+    top: 50px;
+    left: 50px;
+    position: absolute;
+    display: flex;
+    padding: 20px 30px;
+    background: #F7F7F8;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    color: black;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.back:hover {
+    background: #ECECF1;
+}
+
+.fa-arrow-left {
+    transition: 0.3s;
+}
+
+.back:hover .fa-arrow-left {
+    transform: translateX(-10px);
+}
+
+input[type=submit] {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F7F7F8;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input:hover {
+    background: #ECECF1;
+}
