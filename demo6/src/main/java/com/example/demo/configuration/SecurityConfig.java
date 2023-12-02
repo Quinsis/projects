@@ -1,6 +1,6 @@
 package com.example.demo.configuration;
 
-import com.example.demo.service.CustomUserDetailsService;
+import com.example.demo.service.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +18,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableMethodSecurity
 public class SecurityConfig {
     @Autowired
-    private CustomUserDetailsService userDetailsService;
+    private UserDetailsServiceImpl userDetailsService;
 
     @Bean
     protected SecurityFilterChain configure(HttpSecurity http) throws Exception {

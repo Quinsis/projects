@@ -6,12 +6,13 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface OfflineLinkRepository extends MongoRepository<OfflineLink, String> {
     @Query("{ 'code' : ?0 }")
-    OfflineLink getOfflineLinkByCode(String code);
+    Optional<OfflineLink> getOfflineLinkByCode(String code);
 
     @Query("{ 'schema.id' : ?0 }")
-    List<OfflineLink> getOfflineLinksBySchemaId(String schemaId);
+    Optional<List<OfflineLink>> getOfflineLinksBySchemaId(String schemaId);
 }

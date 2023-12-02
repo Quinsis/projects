@@ -9,12 +9,13 @@ import org.springframework.data.mongodb.repository.Update;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface SchemaRepository extends MongoRepository<Schema, String> {
     @Query("{ 'userId' : ?0 }")
-    List<Schema> getSchemasByUserId(Long userId);
+    Optional<List<Schema>> getSchemasByUserId(Long userId);
 
     @Query("{ 'id' : ?0 }")
-    Schema getSchemaById(String id);
+    Optional<Schema> getSchemaById(String id);
 }

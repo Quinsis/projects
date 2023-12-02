@@ -6,12 +6,13 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface TaskRepository extends MongoRepository<Task, String> {
     @Query("{ 'ownerId' : ?0 }")
-    List<Task> getTasksByOwnerId(Long ownerId);
+    Optional<List<Task>> getTasksByOwnerId(Long ownerId);
 
     @Query("{ 'id':  ?0 }")
-    Task getTaskById(String taskId);
+    Optional<Task> getTaskById(String taskId);
 }

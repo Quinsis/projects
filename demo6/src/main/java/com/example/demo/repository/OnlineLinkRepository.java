@@ -5,11 +5,13 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface OnlineLinkRepository extends MongoRepository<OnlineLink, String> {
     @Query("{ 'code' : ?0 }")
-    OnlineLink getOnlineLinkByCode(String code);
+    Optional<OnlineLink> getOnlineLinkByCode(String code);
 
     @Query("{ 'schemaId' : ?0 }")
-    OnlineLink getOnlineLinkBySchemaId(String schemaId);
+    Optional<OnlineLink> getOnlineLinkBySchemaId(String schemaId);
 }

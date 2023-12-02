@@ -102,7 +102,7 @@
     function loadTasks() {
         $.ajax({
             type: 'POST',
-            url: '/api/v1/loadTasks',
+            url: '/loadTasks',
             dataType: 'json',
             success: async function (data) {
                 $(".tasks").html(data.tasks);
@@ -180,7 +180,7 @@
     function saveTask() {
         $.ajax({
             type: 'PUT',
-            url: '/api/v1/createTask',
+            url: '/createTask',
             data: {
                 name: document.querySelector(".taskInfo-name").textContent,
                 description: document.querySelector(".taskInfo-desc").textContent,
@@ -205,7 +205,7 @@
 
         $.ajax({
             type: 'DELETE',
-            url: '/api/v1/deleteTask',
+            url: '/deleteTask',
             data: { taskId: activeTask },
             success: async function () {
                 document.querySelector(".tasks").removeChild(task1);
@@ -240,7 +240,7 @@
     function createTask() {
         $.ajax({
             type: 'PUT',
-            url: '/api/v1/createTask',
+            url: '/createTask',
             data: {
                 name: document.querySelector("#task-name").value,
                 description: document.querySelector("#description-text").value,
@@ -293,7 +293,7 @@
 
         $.ajax({
             type: 'POST',
-            url: '/api/v1/loadSchemasForConnect',
+            url: '/loadSchemasForConnect',
             dataType: 'json',
             success: async function (data) {
                 $(".schemas").html(data.schemas);
@@ -322,7 +322,7 @@
     function loadTables() {
         $.ajax({
             type: 'POST',
-            url: '/api/v1/loadTablesBySchemaId',
+            url: '/loadTablesBySchemaId',
             data: { schemaId: activeSchema },
             dataType: 'json',
             success: function (data) {
@@ -338,7 +338,7 @@
     function loadTask() {
         $.ajax({
             type: 'POST',
-            url: '/api/v1/loadTaskById',
+            url: '/loadTaskById',
             data: { taskId: activeTask },
             dataType: 'json',
             success: function (data) {
@@ -427,7 +427,7 @@
             if (queryFromTask || (activeSchema != '' & sqlQuery != '')) {
                 $.ajax({
                     type: 'POST',
-                    url: '/api/v1/executeQueryWithoutSave',
+                    url: '/executeQueryWithoutSave',
                     data: { sqlQuery: sqlQuery, schemaId: activeSchema, taskId: activeTask },
                     success: function (success) {
                         if (tableOutputWrapper == null) {

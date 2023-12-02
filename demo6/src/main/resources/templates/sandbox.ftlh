@@ -89,7 +89,7 @@
     function loadTables() {
         $.ajax({
             type: 'POST',
-            url: '/api/v1/loadTablesBySchemaId',
+            url: '/loadTablesBySchemaId',
             data: { schemaId: activeSchema },
             dataType: 'json',
             success: function (data) {
@@ -138,7 +138,7 @@
     function loadSchemas() {
         $.ajax({
             type: 'POST',
-            url: '/api/v1/loadSchemas',
+            url: '/loadSchemas',
             dataType: 'json',
             success: async function (data) {
                 $(".schemas").html(data.schemas);
@@ -167,9 +167,9 @@
     document.querySelector(".createSchema").addEventListener("click", function () {
         $.ajax({
             type: 'PUT',
-            url: '/api/v1/createSchema',
+            url: '/createSchema',
             dataType: 'json',
-            success: async function (data) {
+            success: function (data) {
                 removeTable();
                 document.getElementById("sql-input").value = "";
 
@@ -222,7 +222,7 @@
 
             $.ajax({
                 type: 'PUT',
-                url: '/api/v1/changeSchemaName',
+                url: '/changeSchemaName',
                 data: {schemaName: input.value, schemaId: activeSchema},
                 success: function () {
                     document.getElementById("outputs-schema_name").textContent = newSpan.innerText;
@@ -239,7 +239,7 @@
 
         $.ajax({
             type: 'DELETE',
-            url: '/api/v1/deleteSchema',
+            url: '/deleteSchema',
             data: { schemaId: activeSchema },
             success: async function () {
                 document.querySelector(".schemas").removeChild(schema1);
@@ -267,28 +267,13 @@
         loadTables();
     }
 
-    function share() {
-        $.ajax({
-            type: 'POST',
-            url: '/api/v1/shareSchema',
-            data: { schemaId: activeSchema },
-            success: async function (data) {
-                let json = JSON.stringify(data);
-                shareModalOpen(json);
-            },
-            error: function (error) {
-                console.log(error);
-            }
-        });
-    }
-
     function shareLink() {
         if (!timeoutShare) {
             // Формирование ссылки из API
             if (document.querySelector(".online-share").classList.contains("share-active")) {
                 $.ajax({
                     type: 'POST',
-                    url: '/api/v1/link/online',
+                    url: '/link/online',
                     data: activeSchema,
                     success: function (data) {
                         navigator.clipboard.writeText(data)
@@ -310,7 +295,7 @@
             } else {
                 $.ajax({
                     type: 'POST',
-                    url: '/api/v1/link/offline',
+                    url: '/link/offline',
                     data: activeSchema,
                     success: function (data) {
                         navigator.clipboard.writeText(data)
@@ -338,7 +323,7 @@
         document.querySelector(".overlay").style.display = "none";
     }
 
-    function shareModalOpen(json) {
+    function shareModalOpen() {
         document.querySelector(".shareModal").style.display = "flex";
         document.querySelector(".overlay").style.display = "block";
     }
@@ -352,9 +337,10 @@
             if (activeSchema != '' & sqlQuery != '') {
                 $.ajax({
                     type: 'POST',
-                    url: '/api/v1/executeQuery',
+                    url: '/executeQuery',
                     data: {sqlQuery: sqlQuery, schemaId: activeSchema},
                     success: function (success) {
+                        console.log(success);
                         if (tableOutputWrapper == null) {
                             tableOutput = document.createElement("table")
                             tableOutput.classList.add("table-output");
@@ -363,7 +349,7 @@
                         var successAnimate;
                         tableOutput.innerHTML = "<span class='error-table'>" + success + "</span>";
 
-                        if (success.endsWith('В таблице отсутствуют записи.') || success.endsWith('запрос не вернул результатов.')) {
+                        if (success.endsWith('В таблице отсутствуют записи.') || success.endsWith('Запрос не вернул результатов.')) {
                             successAnimate = true;
                         } else if (success.startsWith("ОШИБКА")) {
                             successAnimate = false;

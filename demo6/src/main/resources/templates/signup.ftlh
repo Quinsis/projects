@@ -15,7 +15,7 @@
     <main class="main">
         <form action="/signup" class="main__form" method="post">
             <h1 class="main__form__title">Регистрация</h1>
-            <div class="main__form__input-group <#if errorMessage="Логин уже используется">input-error</#if>">
+            <div class="main__form__input-group <#if errorMessage?if_exists == "Логин уже используется">input-error</#if>">
                 <label id="label_name" class="main__form__label" for="name">Логин</label>
                 <input class="main__form__input" id="name" type="text" name="name"
                        <#if errorMessage?if_exists != "">value="${account.name}"</#if> required>
@@ -23,7 +23,7 @@
                     <small class="main__form__error"><i class="fa-solid fa-circle-exclamation"></i> ${errorMessage}</small>
                 </#if>
             </div>
-            <div class="main__form__input-group <#if errorMessage?if_exists="Почта уже используется">input-error</#if>">
+            <div class="main__form__input-group <#if errorMessage?if_exists == "Почта уже используется">input-error</#if>">
                 <label id="label_email" class="main__form__label" for="email">Почта</label>
                 <input class="main__form__input" id="email" type="email" name="email"
                        <#if errorMessage?if_exists != "">value="${account.email}"</#if> required>

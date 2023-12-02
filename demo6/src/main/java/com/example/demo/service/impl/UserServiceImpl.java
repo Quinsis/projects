@@ -1,6 +1,6 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.model.User;
+import com.example.demo.model.postgres.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -14,16 +14,20 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<User> getUserByResetPasswordCode(String code) {
-        return this.userRepository.findByResetPasswordCode(code);
+        return userRepository.findByResetPasswordCode(code);
+    }
+    @Override
+    public Optional<User> getUserByName(String name) {
+        return userRepository.findByName(name);
     }
 
     @Override
     public Optional<User> getUserByEmail(String email) {
-        return this.userRepository.findByEmail(email);
+        return userRepository.findByEmail(email);
     }
 
     @Override
-    public Optional<User> getUserByName(String name) {
-        return this.userRepository.findByName(name);
+    public Optional<User> getUserByActivationCode(String activationCode) {
+        return userRepository.findByActivationCode(activationCode);
     }
 }

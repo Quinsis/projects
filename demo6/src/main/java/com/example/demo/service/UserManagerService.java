@@ -1,13 +1,10 @@
 package com.example.demo.service;
 
-import com.example.demo.model.User;
+import com.example.demo.model.postgres.User;
 
 import java.util.Optional;
 
 public interface UserManagerService {
-    String createUser(User user);
-    boolean resetPassword(String code, String newPassword);
-    Optional<User> forgotPassword(String email);
-    Optional<User> activateUser(String code);
-    void sendEmail(String to, String text, String subject);
+    Optional<User> activate(String code);
+    Optional<User> reset(String code, String newPassword);
 }
